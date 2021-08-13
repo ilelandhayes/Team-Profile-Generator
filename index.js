@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
-const questions = require('./lib/questions.js');
-const generateMarkdown = require('./utils/generateMarkdown');
+const questions = require('./src/questions.js');
+const generateHTML = require('./utils/generateMarkdown');
 const fs = require('fs');
 
 // function that writes HTML file
