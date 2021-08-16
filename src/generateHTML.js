@@ -1,5 +1,7 @@
 const managerCard = (managerArray) => {
-    let card = `
+    let card = "";
+    for (const manager of managerArray){
+    card += `
     <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
         <div class="card-header">
             <div class="card-body">
@@ -16,11 +18,14 @@ const managerCard = (managerArray) => {
         </div>
     </div>
     `;
+    }
     return card;
 }
 
 const internCard = (internArray) => {
-    let card = `
+    let card = "";
+    for (const intern of internArray){
+        card +=  `
     <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
         <div class="card-header">
             <div class="card-body">
@@ -37,11 +42,14 @@ const internCard = (internArray) => {
         </div>
     </div>
     `;
+    }
     return card;
 }
 
 const engineerCard = (engineerArray) => {
-    let card = `
+    let card = "";
+    for (const engineer of engineerArray){
+        card +=  `
     <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
         <div class="card-header">
             <div class="card-body">
@@ -58,6 +66,7 @@ const engineerCard = (engineerArray) => {
         </div>
     </div>
     `;
+    }
     return card;
 }
 
