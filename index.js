@@ -4,13 +4,11 @@ const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const util = require("util");
-const writeFileAsync = util.promisify(fs.writeFile);
 
 const {
-    employeeQuestions,
+    employeeQuestions, 
+    engineerQuestions, 
     managerQuestions,
-    engineerQuestions,
     internQuestions,
     addNewTeamMemberQuestions,
 } = require('./src/questions.js');
@@ -21,11 +19,11 @@ const internArray = [];
 const engineerArray = [];
 
 // function that writes HTML file
-// const writeToFile = (fileName, answers) => {
-//     fs.writeFile(fileName, answers, (error) => {
-//         (error) ? log.error(error) : console.log('Successfully wrote to index.html file')
-//     })
-// };
+const writeToFile = (fileName, answers) => {
+    fs.writeFile(fileName, answers, (error) => {
+        (error) ? log.error(error) : console.log('Successfully wrote to index.html file')
+    })
+};
 
 const theTeam = async () => {
     let employee = await inquirer.prompt(employeeQuestions);
@@ -71,9 +69,9 @@ const theTeam = async () => {
 };
 
 const newMembers = async () => {
-
-    let addMembersObj;
+    
     let addMember = 'Yes'
+    let addMembersObj;
     while (addMember === 'Yes') {
         addMembersObj = await inquirer.prompt(addNewTeamMemberQuestions);
         addMember = await addMembersObj.addAnotherMember;
@@ -88,7 +86,7 @@ const init = async () => {
     try {
         await theTeam();
         await newMembers();
-        await writeFileAsync("./dist/test-index.html", generateHTML(managerArray, engineerArray, internArray)
+        await writeToFile("./dist/test-index.html", generateHTML(managerArray, internArray, engineerArray)
         );
         console.log("");
       } catch (err) {

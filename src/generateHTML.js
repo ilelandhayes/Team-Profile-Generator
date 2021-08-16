@@ -10,9 +10,9 @@ const managerCard = (managerArray) => {
                         Manager
                     </p>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${manager.id}</li>
-                    <li class="list-group-item">Email: ${manager.email}</li>
-                    <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
+                    <li class="list-group-item">ID: ${manager.id} </li>
+                    <li class="list-group-item">Email: ${manager.email} </li>
+                    <li class="list-group-item">Office Number: ${manager.officeNumber} </li>
                 </ul>
             </div>
         </div>
@@ -34,9 +34,9 @@ const internCard = (internArray) => {
                         Intern
                     </p>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${intern.id}</li>
-                    <li class="list-group-item">Email: ${intern.email}</li>
-                    <li class="list-group-item">School: ${intern.school}</li>
+                    <li class="list-group-item">ID: ${intern.id} </li>
+                    <li class="list-group-item">Email: ${intern.email} </li>
+                    <li class="list-group-item">School: ${intern.school} </li>
                 </ul>
             </div>
         </div>
@@ -58,9 +58,9 @@ const engineerCard = (engineerArray) => {
                         Engineer
                     </p>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${engineer.id}</li>
-                    <li class="list-group-item">Email: ${engineer.email}</li>
-                    <li class="list-group-item">Github: ${engineer.github}</li>
+                    <li class="list-group-item">ID: ${engineer.id} </li>
+                    <li class="list-group-item">Email: ${engineer.email} </li>
+                    <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}" </a></li>
                 </ul>
             </div>
         </div>
@@ -76,7 +76,7 @@ const engineerCard = (engineerArray) => {
 const generateHTML = (managerArray, internArray, engineerArray) => {
 
     return `
-        <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -88,7 +88,7 @@ const generateHTML = (managerArray, internArray, engineerArray) => {
     <header>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">My Team</span>
+                <span class="navbar-brand mb-0 h1">My Team:</span>
             </div>
         </nav>
     </header>
