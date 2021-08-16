@@ -20,7 +20,7 @@ const managerCard = (managerArray) => {
     `;
     }
     return card;
-}
+};
 
 const internCard = (internArray) => {
     let card = "";
@@ -31,12 +31,12 @@ const internCard = (internArray) => {
             <div class="card-body">
                 <h5 class="card-title">${intern.name}</h5>
                     <p class="subtitle has-text-weight-bold is-6 has-text-dark">
-                        Manager
+                        Intern
                     </p>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${intern.id}</li>
                     <li class="list-group-item">Email: ${intern.email}</li>
-                    <li class="list-group-item">Office Number: ${intern.officeNumber}</li>
+                    <li class="list-group-item">School: ${intern.school}</li>
                 </ul>
             </div>
         </div>
@@ -44,7 +44,7 @@ const internCard = (internArray) => {
     `;
     }
     return card;
-}
+};
 
 const engineerCard = (engineerArray) => {
     let card = "";
@@ -55,12 +55,12 @@ const engineerCard = (engineerArray) => {
             <div class="card-body">
                 <h5 class="card-title">${engineer.name}</h5>
                     <p class="subtitle has-text-weight-bold is-6 has-text-dark">
-                        Manager
+                        Engineer
                     </p>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${engineer.id}</li>
                     <li class="list-group-item">Email: ${engineer.email}</li>
-                    <li class="list-group-item">Office Number: ${engineer.officeNumber}</li>
+                    <li class="list-group-item">Github: ${engineer.github}</li>
                 </ul>
             </div>
         </div>
@@ -68,7 +68,7 @@ const engineerCard = (engineerArray) => {
     `;
     }
     return card;
-}
+};
 
 
 
@@ -99,9 +99,9 @@ const generateHTML = (managerArray, internArray, engineerArray) => {
                 <div class="column">
                     ${managerCard(managerArray)}
                 <div class="column">
-                    ${engineerCard(engineerArray)}
-                <div class="column">
                     ${internCard(internArray)}
+                <div class="column">
+                    ${engineerCard(engineerArray)}
             </div>
         </div>
 
@@ -111,6 +111,6 @@ const generateHTML = (managerArray, internArray, engineerArray) => {
     </html>
     `;
 
-}
+};
 
 module.exports = generateHTML;
