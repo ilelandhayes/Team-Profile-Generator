@@ -4,6 +4,8 @@ const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const {
     employeeQuestions, 
@@ -19,11 +21,11 @@ const internArray = [];
 const engineerArray = [];
 
 // function that writes HTML file
-const writeToFile = (fileName, answers) => {
-    fs.writeFile(fileName, answers, (error) => {
-        (error) ? log.error(error) : console.log('Successfully wrote to index.html file')
-    })
-};
+// const writeToFile = (fileName, answers) => {
+//     fs.writeFile(fileName, answers, (error) => {
+//         (error) ? log.error(error) : console.log('Successfully wrote to index.html file')
+//     })
+// };
 
 const theTeam = async () => {
     let employee = await inquirer.prompt(employeeQuestions);
@@ -61,6 +63,7 @@ const theTeam = async () => {
                 );
                 engineerArray.push(engineer);
                 break;
+                default:"";
         }
     } catch (error) {
         console.log(error);
@@ -68,30 +71,43 @@ const theTeam = async () => {
 
 };
 
-const newMembers = async () => {
+// const newMembers = async () => {
     
-    let addMember = 'Yes'
-    let addMembersObj;
-    while (addMember === 'Yes') {
-        addMembersObj = await inquirer.prompt(addNewTeamMemberQuestions);
-        addMember = await addMembersObj.addAnotherMember;
-        if (addMember === 'Yes') {
-            await theTeam();
-        }
+//     let addMember = "Yes";
+//     let addMembersObj;
+//     while (addMember === "Yes") {
+//         addMembersObj = await inquirer.prompt(addNewTeamMemberQuestions);
+//         addMember = await addMembersObj.addAnotherMember;
+//         if (addMember === "Yes") {
+//             await theTeam();
+//         }
+//     }
+// };
+
+const addNewMembers = async () => {
+    let addMember = "Yes";
+    let addMoreMembersObj;
+    while (addMember === "Yes") {
+      addMoreMembersObj = await inquirer.prompt(addNewTeamMemberQuestions);
+      addMember = await addMoreMembersObj.addNewMember;
+      if (addMember === "Yes") {
+        await theTeam();
+      }
     }
-};
+  };
 
 const init = async () => {
     
     try {
         await theTeam();
-        await newMembers();
-        await writeToFile("./dist/test-index.html", generateHTML(managerArray, internArray, engineerArray)
+        await addNewMembers();
+        await writeFileAsync("./dist/test-index.html", generateHTML(managerArray, internArray, engineerArray)
         );
-        console.log("");
+        console.log("Successfully written too HTML file!");
       } catch (err) {
         console.log(err);
       }
+
 };
 
 init();

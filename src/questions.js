@@ -32,7 +32,7 @@ const engineerQuestions = [
 
 const managerQuestions = [
     {
-        name: "officeNumer",
+        name: "officeNumber",
         type: "input",
         message: "What is the managers office number?"
     },

@@ -26,7 +26,9 @@
   
   ## Installation
   
-  1. Clone Repo 2. Run "npm i" in the terminal 3. Run "node index.js" 
+  1. Clone Repo 
+  2. Run "npm i" in the terminal 
+  3. Run "node index.js" 
   
   ## Usage Of
   
