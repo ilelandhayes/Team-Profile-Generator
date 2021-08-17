@@ -20,12 +20,6 @@ const managerArray = [];
 const internArray = [];
 const engineerArray = [];
 
-// function that writes HTML file
-// const writeToFile = (fileName, answers) => {
-//     fs.writeFile(fileName, answers, (error) => {
-//         (error) ? log.error(error) : console.log('Successfully wrote to index.html file')
-//     })
-// };
 
 const theTeam = async () => {
     let employee = await inquirer.prompt(employeeQuestions);
@@ -70,19 +64,6 @@ const theTeam = async () => {
     }
 
 };
-
-// const newMembers = async () => {
-    
-//     let addMember = "Yes";
-//     let addMembersObj;
-//     while (addMember === "Yes") {
-//         addMembersObj = await inquirer.prompt(addNewTeamMemberQuestions);
-//         addMember = await addMembersObj.addAnotherMember;
-//         if (addMember === "Yes") {
-//             await theTeam();
-//         }
-//     }
-// };
 
 const addNewMembers = async () => {
     let addMember = "Yes";
