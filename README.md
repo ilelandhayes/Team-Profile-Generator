@@ -30,18 +30,12 @@
   2. Run "npm i" in the terminal 
   3. Run "node index.js" 
   
-  ## Usage Of
-  
-  Once "node index.js" is ran answer all the questions
-  
   ## How to Contribute
   
   No contributions at this time
-  
-  ## Testing
-  
-    
-  
+  ## Demo
+
+
   ## License
   
   This repository is released under the license of: [MIT](https://opensource.org/licenses/MIT)

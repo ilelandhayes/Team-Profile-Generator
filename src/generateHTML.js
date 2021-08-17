@@ -86,7 +86,7 @@ const generateHTML = (managerArray, internArray, engineerArray) => {
     </head>
 
     <header>
-        <nav class="navbar navbar-light bg-light" style="text-align: center">
+        <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1" style="font-size: 1.8rem">My Team:</span>
             </div>
@@ -95,14 +95,12 @@ const generateHTML = (managerArray, internArray, engineerArray) => {
 
     <body>
 
-        <main style="margin-top: 5rem; display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap">
-            <div class="hero-body">
-                ${managerCard(managerArray)}
+        <main style="margin-top: 5rem; display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap; text-align: center">
+            ${managerCard(managerArray)}
                     
-                ${internCard(internArray)}
+            ${internCard(internArray)}
                     
-                ${engineerCard(engineerArray)}
-            </div>
+            ${engineerCard(engineerArray)}
         </main>
 
     </body>
