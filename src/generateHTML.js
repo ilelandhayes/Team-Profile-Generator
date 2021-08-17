@@ -2,7 +2,7 @@ const managerCard = (managerArray) => {
     let card = "";
     for (const manager of managerArray){
     card += `
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">
             <div class="card-body">
                 <h5 class="card-title">${manager.name}</h5>
@@ -26,7 +26,7 @@ const internCard = (internArray) => {
     let card = "";
     for (const intern of internArray){
         card +=  `
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">
             <div class="card-body">
                 <h5 class="card-title">${intern.name}</h5>
@@ -50,7 +50,7 @@ const engineerCard = (engineerArray) => {
     let card = "";
     for (const engineer of engineerArray){
         card +=  `
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">
             <div class="card-body">
                 <h5 class="card-title">${engineer.name}</h5>
@@ -86,9 +86,9 @@ const generateHTML = (managerArray, internArray, engineerArray) => {
     </head>
 
     <header>
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1" style="font-size: 1.8rem">My Team:</span>
+        <nav class="navbar card text-white bg-primary mb-3" style="height: 8rem; justify-content: center;">
+            <div class="container-fluid" style="justify-content: center; text-align: center;">
+                <span class="navbar-brand mb-0 h1" style="font-size: 3rem; text-align: center;">My Team:</span>
             </div>
         </nav>
     </header>

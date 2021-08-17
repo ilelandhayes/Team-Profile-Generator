@@ -75,7 +75,7 @@ const addNewMembers = async () => {
         await theTeam();
       }
     }
-  };
+};
 
 const init = async () => {
     
